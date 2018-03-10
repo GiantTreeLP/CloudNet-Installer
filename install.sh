@@ -10,10 +10,9 @@
 
 install_package() {
 	echo "Checking and installing '$1'..."
-	./pacapt -Qi "$1" 2>&1 >/dev/null
+	./pacapt -Qi "$1" >/dev/null 2>&1
 	if [ $? -eq 1 ]; then
-		./pacapt --noconfirm -S $*
-		if [ $? -ne 0 ]; then
+		if [ "$(./pacapt --noconfirm -S "$@")" -ne 0 ]; then
 			echo "Error installing '$1'."
 			echo "Aborting installation."
 			exit 1
@@ -36,7 +35,7 @@ install_java() {
 					update_package_cache
 					install_package 'openjdk-8-jre-headless' '-t' 'jessie-backports'
 					return
-				else if [ "$VERSION_ID" > "8"]; then
+				elif [ "$VERSION_ID" -gt "8" ]; then
 					install_package 'openjdk-8-jre-headless'
 					return
 				else
@@ -56,8 +55,7 @@ install_java() {
 }
 
 update_package_cache() {
-	./pacapt -Sy
-	if [ $? -ne 0 ]; then
+	if [ "$(./pacapt -Sy)" -ne 0 ]; then
 		echo "Error updating the package cache."
 		echo "Aborting installation."
 		exit 1
@@ -100,13 +98,12 @@ echo "Preparing start scripts..."
 chmod u+x "CloudNet-Master/start.sh" "CloudNet-Wrapper/start.sh"
 
 echo "Checking for incompatibilities..."
-fuser 1410/tcp 1420/tcp
-if [ $? -eq 0 ]; then
+if [ "$(fuser '1410/tcp' '1420/tcp')" -eq 0 ]; then
 	echo "Another CloudNet-Master is already running."
 	echo "You might want to stop it first or configure this one to use different ports."
 fi
-fuser 25565/tcp
-if [ $? -eq 0 ]; then
+
+if [ "$(fuser '25565/tcp')" -eq 0 ]; then
 	echo "Another process is using the port 25565 which is typically used by Minecraft."
 	echo "You might want to stop it first or configure this one to use different ports."
 fi
