@@ -22,11 +22,6 @@ install_package() {
 }
 
 install_java() {
-	if install_package 'openjdk-8-jre-headless'; then
-		echo "Java 8 is already installed or was just installed."
-		return
-	fi
-
 	if [ -f "/etc/os-release" ]; then
 		(
 			source "/etc/os-release"
