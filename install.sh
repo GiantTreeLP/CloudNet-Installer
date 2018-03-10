@@ -66,6 +66,9 @@ install_java() {
 				return
 			fi
 		fi
+
+		echo "Trying to install on $NAME using default package"
+		install_package
 	fi
 
 	echo "Could not install java."
