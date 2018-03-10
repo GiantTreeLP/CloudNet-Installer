@@ -2,6 +2,10 @@
 
 Installer for the [Cloud Network Environment Technology](https://www.spigotmc.org/resources/cloudnet-the-cloud-network-environment-technology.42059/).
 
+## Version
+
+The installer is currently installing CloudNET version 2.1Pv30.
+
 ## Prequisites
 
 [`curl`](https://curl.haxx.se/) has to be available to be able to download additional files.
