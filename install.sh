@@ -23,6 +23,7 @@ install_package() {
 
 install_java() {
 	if install_package 'openjdk-8-jre-headless'; then
+		echo "Java 8 is already installed or was just installed."
 		return
 	fi
 
@@ -114,7 +115,7 @@ echo "Verifying download..."
 unzip -tq "cloudnet.zip"
 
 echo "Unpacking CloudNet..."
-unzip -qf "cloudnet.zip"
+unzip -qo "cloudnet.zip"
 
 echo "Preparing start scripts..."
 chmod u+x "CloudNet-Master/start.sh" "CloudNet-Wrapper/start.sh"
