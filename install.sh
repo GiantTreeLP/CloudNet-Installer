@@ -23,6 +23,7 @@ install_java() {
 		echo "Please make sure it is compatible with CloudNet."
 		return
 	fi
+
 	if [ -f "/etc/os-release" ]; then
 		source "/etc/os-release"
 
@@ -67,6 +68,10 @@ install_java() {
 		elif [ "$ID" = "arch" ]; then
 			echo "Choosing correct arch package."
 			install_package 'jre8-openjdk-headless'
+			return
+		elif [ "$ID" = "centos" ]; then
+			echo "Choosing correct centos package."
+			install_package 'java-1.8.0-openjdk-headless'
 			return
 		fi
 
