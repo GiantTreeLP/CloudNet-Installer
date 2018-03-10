@@ -10,7 +10,7 @@
 
 install_package() {
 	echo "Checking and installing '$@'..."
-	if ! ./pacapt -Qi "$1" >/dev/null 2>&1 1> "/dev/null"; then
+	if ! ./pacapt -Qi "$1" 2>&1 1> "/dev/null"; then
 		if ! ./pacapt --noconfirm -S "$@"; then
 			echo "Error installing '$1'."
 			echo "Aborting installation."
