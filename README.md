@@ -21,6 +21,12 @@ On Alpine-based distributions, you need to add `curl` and `bash` manually:
 
     apk update && apk add curl bash -y
 
+## Installation
+
+Simply copy and paste the following code into your shell:
+
+    curl -sL "https://git.groundmc.net/GiantTree/CloudNet-Installer/raw/master/install.sh" | bash
+
 ## Compatibility
 
 All tests have been conducted on the slim images available for Docker.
@@ -44,11 +50,3 @@ All tests have been conducted on the slim images available for Docker.
 | CentOS       | 7.4                     | ✅               |
 | ------------ | ----------------------- | ----------------- |
 | Fedora       | 27 (Twenty Seven)       | ✅               |
-
-
-
-## Running
-
-Simply copy and paste the following code into your shell:
-
-    curl -sL "https://git.groundmc.net/GiantTree/CloudNet-Installer/raw/master/install.sh" | bash
