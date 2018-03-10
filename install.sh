@@ -10,14 +10,10 @@
 
 install_package() {
 	echo "Checking and installing '$@'..."
-	if ! ./pacapt -Qi "$1" 2>"/dev/null" 1>"/dev/null"; then
-		if ! ./pacapt --noconfirm -S "$@" 2>"/dev/null" 1>"/dev/null"; then
-			echo "Error installing '$1'."
-			echo "Aborting installation."
-			exit 1
-		fi
-	else
-		echo "'$1' already installed."
+	if ! ./pacapt --noconfirm -S "$@" 2>"/dev/null" 1>"/dev/null"; then
+		echo "Error installing '$1'."
+		echo "Aborting installation."
+		exit 1
 	fi
 }
 
@@ -38,11 +34,11 @@ install_java() {
 
 			if [ "$VERSION_ID" = "8" ]; then
 				echo "Found Debian 8, using jessie-backports of Java 8"
-				echo "deb http://deb.debian.org/debian jessie-backports main" > "/etc/apt/sources.list.d/jessie-backports.list"
+				echo "deb http://deb.debian.org/debian jessie-backports main" >"/etc/apt/sources.list.d/jessie-backports.list"
 				update_package_cache
 				install_package 'openjdk-8-jre-headless' '-t' 'jessie-backports'
 				return
-			elif [ "$VERSION_ID" ] > "8" ]; then
+			elif [ "$VERSION_ID" ] ] >"8"; then
 				echo "Found modern Debian, Java 8 should be in the official sources"
 				install_package 'openjdk-8-jre-headless'
 				return
@@ -56,7 +52,7 @@ install_java() {
 			if [ "$VERSION_ID" = "14.04" ]; then
 				echo "Found old version of Ubuntu."
 				echo "Using OpenJDK PPA..."
-				echo -e "deb http://ppa.launchpad.net/openjdk-r/ppa/ubuntu trusty main\ndeb-src http://ppa.launchpad.net/openjdk-r/ppa/ubuntu trusty main" > "/etc/apt/sources.list.d/ppa-openjdk.list"
+				echo -e "deb http://ppa.launchpad.net/openjdk-r/ppa/ubuntu trusty main\ndeb-src http://ppa.launchpad.net/openjdk-r/ppa/ubuntu trusty main" >"/etc/apt/sources.list.d/ppa-openjdk.list"
 				apt-key adv --keyserver "keyserver.ubuntu.com" --recv-keys "86F44E2A" 2>"/dev/null" 1>"/dev/null"
 				update_package_cache
 				install_package 'openjdk-8-jre-headless'
