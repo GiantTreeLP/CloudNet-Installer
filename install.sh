@@ -10,8 +10,8 @@
 
 install_package() {
 	echo "Checking and installing '$@'..."
-	if ! ./pacapt -Qi "$1" 2>&1 1>"/dev/null"; then
-		if ! ./pacapt --noconfirm -S "$@" 2>&1 1>"/dev/null"; then
+	if ! ./pacapt -Qi "$1" 2>"/dev/null" 1>"/dev/null"; then
+		if ! ./pacapt --noconfirm -S "$@" 2>"/dev/null" 1>"/dev/null"; then
 			echo "Error installing '$1'."
 			echo "Aborting installation."
 			exit 1
@@ -57,9 +57,10 @@ install_java() {
 				echo "Found old version of Ubuntu."
 				echo "Using OpenJDK PPA..."
 				echo -e "deb http://ppa.launchpad.net/openjdk-r/ppa/ubuntu trusty main\ndeb-src http://ppa.launchpad.net/openjdk-r/ppa/ubuntu trusty main" > "/etc/apt/sources.list.d/ppa-openjdk.list"
-				apt-key adv --keyserver "keyserver.ubuntu.com" --recv-keys "86F44E2A" 2>&1 1>"/dev/null"
+				apt-key adv --keyserver "keyserver.ubuntu.com" --recv-keys "86F44E2A" 2>"/dev/null" 1>"/dev/null"
 				update_package_cache
 				install_package 'openjdk-8-jre-headless'
+				return
 			fi
 		fi
 	fi
@@ -70,7 +71,7 @@ install_java() {
 }
 
 update_package_cache() {
-	if ! ./pacapt -Sy 2>&1 1>"/dev/null"; then
+	if ! ./pacapt -Sy 2>"/dev/null" 1>"/dev/null"; then
 		echo "Error updating the package cache."
 		echo "Aborting installation."
 		exit 1
