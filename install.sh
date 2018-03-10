@@ -97,7 +97,7 @@ echo "so that you can run it right away."
 sleep 1
 
 echo "Downloading dependencies..."
-curl --progress-bar -L -q -o ././pacapt "https://raw.githubusercontent.com/icy/./pacapt/ng/./pacapt" && chmod +x "./pacapt"
+curl --progress-bar -L -q -o "./pacapt" "https://raw.githubusercontent.com/icy/./pacapt/ng/./pacapt" && chmod +x "./pacapt"
 
 echo "Updating package cache..."
 update_package_cache
@@ -108,13 +108,13 @@ install_package 'unzip'
 install_java
 
 echo "Downloading CloudNet version 2.1Pv30..."
-curl --progress-bar -L -q -o cloudnet.zip "http://klautnett.de/cloudnet/version/pre/2.1.Pv30/CloudNet.zip"
+curl --progress-bar -L -q -o "cloudnet.zip" "http://klautnett.de/cloudnet/version/pre/2.1.Pv30/CloudNet.zip"
 
 echo "Verifying download..."
-unzip -tq cloudnet.zip
+unzip -tq "cloudnet.zip"
 
 echo "Unpacking CloudNet..."
-unzip -qf cloudnet.zip
+unzip -qf "cloudnet.zip"
 
 echo "Preparing start scripts..."
 chmod u+x "CloudNet-Master/start.sh" "CloudNet-Wrapper/start.sh"
