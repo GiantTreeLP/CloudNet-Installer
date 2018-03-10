@@ -33,7 +33,10 @@ install_java() {
 
 			# Handle Debian
 			if [ "$ID" = "debian" ]; then
-				# Handle Debian 8
+				# Handle slim versions
+				# https://github.com/debuerreotype/docker-debian-artifacts/issues/24
+				mkdir -p "/usr/share/man/man1"
+				
 				if [ "$VERSION_ID" = "8" ]; then
 					echo "Found Debian 8, using jessie-backports of Java 8"
 					echo "deb http://deb.debian.org/debian jessie-backports main" > "/etc/apt/sources.list.d/jessie-backports.list"
