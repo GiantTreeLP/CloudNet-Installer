@@ -31,11 +31,11 @@ install_java() {
 			if [ "$ID" = "debian" ]; then
 				# Handle Debian 8
 				if [ "$VERSION_ID" = "8" ]; then
-					echo "deb https://deb.debian.org/debian jessie-backports main" >> "/etc/apt/sources.list.d/jessie-backports.list"
+					echo "deb http://deb.debian.org/debian jessie-backports main" >> "/etc/apt/sources.list.d/jessie-backports.list"
 					update_package_cache
 					install_package 'openjdk-8-jre-headless' '-t' 'jessie-backports'
 					return
-				elif [ "$VERSION_ID" -gt "8" ]; then
+				elif [ "$VERSION_ID" > "8" ]; then
 					install_package 'openjdk-8-jre-headless'
 					return
 				else
