@@ -62,7 +62,9 @@ update_package_cache() {
 }
 
 check_incompatibilities() {
-	if [ ! -x "$(which fuser)"]
+	if [ ! -x "$(which fuser)" ]; then
+		return
+	fi
 	echo "Checking for incompatibilities..."
 	if fuser '1410/tcp' '1420/tcp'; then
 		echo "Another CloudNet-Master is already running."
