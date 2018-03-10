@@ -5,37 +5,43 @@
 # Additionally checks for issues regarding other running services.
 #
 # Author: GiantTree
-# Version: 0.1a
+# Version: 0.2a
 # Compatible with CloudNet version 2.1.Pv30
 
 install_package() {
 	echo "Checking and installing '$1'..."
 	./pacapt -Qi "$1" 2>&1 >/dev/null
 	if [ $? -eq 1 ]; then
-		./pacapt --noconfirm -S "$1"
+		./pacapt --noconfirm -S "$*"
 		if [ $? -ne 0 ]; then
-			echo "Error installing $1."
+			echo "Error installing '$1'."
 			echo "Aborting installation."
 			exit 1
 		fi
 	else
-		echo "$1 already installed."
+		echo "'$1' already installed."
 	fi
 }
 
 install_java() {
-	echo "Checking and installing Java 8..."
-	./pacapt -Qi 'openjdk-8-jre-headless' 2>&1 >/dev/null
-	if [ $? -eq 1 ]; then
-		./pacapt --noconfirm -S 'openjdk-8-jre-headless' && \
-		return
-	fi
-	./pacapt -Qi 'openjdk-8-jre-headless' 2>&1 >/dev/null
-	if [ $? -eq 1 ]; then
-		./pacapt --noconfirm -S 'openjdk-8-jre-headless' -t jessie-backports && \
-		return
+	if [ -f "/etc/os-release" ]; then
+		(
+			source "/etc/os-release"
+
+			# Handle Debian
+			if [ $ID -eq "debian" ]; then
+				# Handle Debian 8
+				if [ $VERSION_ID -eq "8" ]; then
+					echo "deb https://deb.debian.org/debian jessie-backports main" >> "/etc/sources.list.d/jessie-backports.list"
+					update_package_cache
+					install_package 'openjdk-8-jre-headless' '-t' 'jessie-backports'
+				fi
+			fi
+		)
 	fi
 
+	install_package 'openjdk-8-jre-headless' && return
+	
 	echo "Could not install java."
 	echo "Aborting installation."
 	exit 1
