@@ -22,12 +22,17 @@ install_package() {
 }
 
 install_java() {
+	if [ -x "$(which java)" ]; then
+		echo "Found a valid installation of Java."
+		echo "Please make sure it is compatible with CloudNet."
+		return
+	fi
 	if [ -f "/etc/os-release" ]; then
 		(
 			source "/etc/os-release"
 
 			# Handle Debian
-			if [ "$ID" = "debian" ]; then
+			if [ "$ID" = "debian" -or "$ID_LIKE" = "debian" ]; then
 				# Handle slim versions
 				# https://github.com/debuerreotype/docker-debian-artifacts/issues/24
 				mkdir -p "/usr/share/man/man1"
