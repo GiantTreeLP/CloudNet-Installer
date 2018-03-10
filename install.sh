@@ -65,6 +65,10 @@ install_java() {
 			echo "Choosing correct alpine package."
 			install_package 'openjdk8-jre-base'
 			return
+		elif [ "$ID" = "arch" ]; then
+			echo "Choosing correct arch package."
+			install_java 'jre8-openjdk-headless'
+			return
 		fi
 
 		echo "Trying to install on $NAME using default package"
