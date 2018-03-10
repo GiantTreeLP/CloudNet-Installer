@@ -68,7 +68,7 @@ install_java() {
 		fi
 
 		echo "Trying to install on $NAME using default package"
-		install_package
+		install_package 'openjdk-8-jre-headless'
 	fi
 
 	echo "Could not install java."
