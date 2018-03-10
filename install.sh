@@ -32,10 +32,17 @@ install_java() {
 			if [ "$ID" = "debian" ]; then
 				# Handle Debian 8
 				if [ "$VERSION_ID" = "8" ]; then
-					mkdir -p "/etc/sources.list.d/"
-					echo "deb https://deb.debian.org/debian jessie-backports main" >> "/etc/sources.list.d/jessie-backports.list"
+					echo "deb https://deb.debian.org/debian jessie-backports main" >> "/etc/apt/sources.list.d/jessie-backports.list"
 					update_package_cache
-					install_package '"openjdk-8-jre-headless"' '-t' '"jessie-backports"'
+					install_package 'openjdk-8-jre-headless' '-t' 'jessie-backports'
+					return
+				else if [ "$VERSION_ID" > "8"]; then
+					install_package 'openjdk-8-jre-headless'
+					return
+				else
+					echo "Unsupported version of Debian."
+					echo "Aborting..."
+					exit 1
 				fi
 			fi
 		)
