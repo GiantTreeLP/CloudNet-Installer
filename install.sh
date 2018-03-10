@@ -116,7 +116,7 @@ echo "This script will download CloudNet and it's dependencies, so that you can 
 sleep 1
 
 echo "Downloading dependencies..."
-curl --progress-bar -L -q -o "./pacapt" "https://raw.githubusercontent.com/icy/./pacapt/ng/./pacapt" && chmod +x "./pacapt"
+curl --progress-bar -L -q -o "./pacapt" "https://raw.githubusercontent.com/icy/pacapt/ng/pacapt" && chmod +x "./pacapt"
 
 echo "Updating package cache..."
 update_package_cache
