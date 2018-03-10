@@ -10,9 +10,8 @@
 
 install_package() {
 	echo "Checking and installing '$1'..."
-	./pacapt -Qi "$1" >/dev/null 2>&1
-	if [ $? -eq 1 ]; then
-		if [ ! ./pacapt --noconfirm -S $@; ]; then
+	if ! ./pacapt -Qi "$1" >/dev/null 2>&1; then
+		if ! ./pacapt --noconfirm -S $@; then
 			echo "Error installing '$1'."
 			echo "Aborting installation."
 			exit 1
@@ -55,10 +54,24 @@ install_java() {
 }
 
 update_package_cache() {
-	if [ ! ./pacapt -Sy; ]; then
+	if ! ./pacapt -Sy; then
 		echo "Error updating the package cache."
 		echo "Aborting installation."
 		exit 1
+	fi
+}
+
+check_incompatibilities() {
+	if [ ! -x "$(which fuser)"]
+	echo "Checking for incompatibilities..."
+	if fuser '1410/tcp' '1420/tcp'; then
+		echo "Another CloudNet-Master is already running."
+		echo "You might want to stop it first or configure this one to use different ports."
+	fi
+
+	if fuser '25565/tcp'; then
+		echo "Another process is using the port 25565 which is typically used by Minecraft."
+		echo "You might want to stop it first or configure this one to use different ports."
 	fi
 }
 
@@ -97,16 +110,7 @@ unzip -q cloudnet.zip
 echo "Preparing start scripts..."
 chmod u+x "CloudNet-Master/start.sh" "CloudNet-Wrapper/start.sh"
 
-echo "Checking for incompatibilities..."
-if [ fuser '1410/tcp' '1420/tcp'; ]; then
-	echo "Another CloudNet-Master is already running."
-	echo "You might want to stop it first or configure this one to use different ports."
-fi
-
-if [ fuser '25565/tcp'; ]; then
-	echo "Another process is using the port 25565 which is typically used by Minecraft."
-	echo "You might want to stop it first or configure this one to use different ports."
-fi
+check_incompatibilities
 
 echo "Cleaning up..."
 # rm "./pacapt" "cloudnet.zip" "$0"
