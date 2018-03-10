@@ -36,6 +36,10 @@ All tests have been conducted on the slim images available for Docker.
 | Alpine       | 3.5                     | ✅                 |
 | ------------ | ----------------------- | ----------------- |
 | Arch Linux   | Latest                  | ✅                 |
+| ------------ | ----------------------- | ----------------- |
+| CentOS       | 7.4                     | ✅                 |
+| ------------ | ----------------------- | ----------------- |
+| Fedora       | 27 (Twenty Seven)       | ✅                 |
 
 
 
@@ -43,4 +47,4 @@ All tests have been conducted on the slim images available for Docker.
 
 Simply copy and paste the following code into your shell:
 
-    curl -L "https://git.groundmc.net/GiantTree/CloudNet-Installer/raw/master/install.sh" | bash
+    curl -sL "https://git.groundmc.net/GiantTree/CloudNet-Installer/raw/master/install.sh" | bash
