@@ -10,9 +10,9 @@
 
 install_package() {
 	echo "Checking and installing '$1'..."
-	pacapt -Qi "$1" 2>&1 >/dev/null
+	./pacapt -Qi "$1" 2>&1 >/dev/null
 	if [ $? -eq 1 ]; then
-		pacapt --noconfirm -S "$1"
+		./pacapt --noconfirm -S "$1"
 		if [ $? -ne 0 ]; then
 			echo "Error installing $1."
 			echo "Aborting installation."
@@ -25,14 +25,14 @@ install_package() {
 
 install_java() {
 	echo "Checking and installing Java 8..."
-	pacapt -Qi 'openjdk-8-jre-headless' 2>&1 >/dev/null
+	./pacapt -Qi 'openjdk-8-jre-headless' 2>&1 >/dev/null
 	if [ $? -eq 1 ]; then
-		pacapt --noconfirm -S 'openjdk-8-jre-headless' && \
+		./pacapt --noconfirm -S 'openjdk-8-jre-headless' && \
 		return
 	fi
-	pacapt -Qi 'openjdk-8-jre-headless' 2>&1 >/dev/null
+	./pacapt -Qi 'openjdk-8-jre-headless' 2>&1 >/dev/null
 	if [ $? -eq 1 ]; then
-		pacapt --noconfirm -S 'openjdk-8-jre-headless' -t jessie-backports && \
+		./pacapt --noconfirm -S 'openjdk-8-jre-headless' -t jessie-backports && \
 		return
 	fi
 
@@ -42,7 +42,7 @@ install_java() {
 }
 
 update_package_cache() {
-	pacapt -Sy
+	./pacapt -Sy
 	if [ $? -ne 0 ]; then
 		echo "Error updating the package cache."
 		echo "Aborting installation."
@@ -63,7 +63,7 @@ echo "so that you can run it right away."
 sleep 1
 
 echo "Downloading dependencies..."
-curl --progress-bar -L -q -o ./pacapt "https://raw.githubusercontent.com/icy/pacapt/ng/pacapt" && chmod +x ./pacapt
+curl --progress-bar -L -q -o ././pacapt "https://raw.githubusercontent.com/icy/./pacapt/ng/./pacapt" && chmod +x ././pacapt
 
 echo "Updating package cache..."
 update_package_cache
@@ -98,7 +98,7 @@ if [ $? -eq 0 ]; then
 fi
 
 echo "Cleaning up..."
-# rm "pacapt" "cloudnet.zip" "$0"
+# rm "./pacapt" "cloudnet.zip" "$0"
 
 echo "Installation successful."
 echo "Enjoy the Cloud Network Environment Technology CloudNet"
