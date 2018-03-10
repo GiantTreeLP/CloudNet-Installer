@@ -44,15 +44,13 @@ install_java() {
 					return
 				else
 					echo "Unsupported version of Debian."
-					echo "You can try manually installing Java using the 'openjdk-8-jre-headless' package."
-					echo "Aborting..."
-					exit 1
+					echo "We are trying to install Java using the 'openjdk-8-jre-headless' package."
+					install_package 'openjdk-8-jre-headless'
+					return
 				fi
 			fi
 		)
 	fi
-
-	install_package 'openjdk-8-jre-headless' && return
 	
 	echo "Could not install java."
 	echo "Aborting installation."
