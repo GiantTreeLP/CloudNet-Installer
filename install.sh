@@ -12,7 +12,7 @@ install_package() {
 	echo "Checking and installing '$1'..."
 	./pacapt -Qi "$1" 2>&1 >/dev/null
 	if [ $? -eq 1 ]; then
-		./pacapt --noconfirm -S "$*"
+		./pacapt --noconfirm -S $*
 		if [ $? -ne 0 ]; then
 			echo "Error installing '$1'."
 			echo "Aborting installation."
@@ -32,9 +32,10 @@ install_java() {
 			if [ "$ID" = "debian" ]; then
 				# Handle Debian 8
 				if [ "$VERSION_ID" = "8" ]; then
+					mkdir -p "/etc/sources.list.d/"
 					echo "deb https://deb.debian.org/debian jessie-backports main" >> "/etc/sources.list.d/jessie-backports.list"
 					update_package_cache
-					install_package 'openjdk-8-jre-headless' '-t' 'jessie-backports'
+					install_package '"openjdk-8-jre-headless"' '-t' '"jessie-backports"'
 				fi
 			fi
 		)
