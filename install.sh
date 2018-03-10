@@ -63,7 +63,7 @@ if [ $EUID -ne 0 ]; then
 	exit 2
 fi
 
-echo "Welcome to the CloudNet installer for version 2.1Pv29"
+echo "Welcome to the CloudNet installer for version 2.1Pv30"
 echo "This script will download CloudNet and it's dependencies,"
 echo "so that you can run it right away."
 sleep 1
