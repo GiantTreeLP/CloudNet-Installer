@@ -32,7 +32,7 @@ install_java() {
 			source "/etc/os-release"
 
 			# Handle Debian
-			if [ "$ID" = "debian" -or "$ID_LIKE" = "debian" ]; then
+			if [ "$ID" = "debian" -o "$ID_LIKE" = "debian" ]; then
 				# Handle slim versions
 				# https://github.com/debuerreotype/docker-debian-artifacts/issues/24
 				mkdir -p "/usr/share/man/man1"
