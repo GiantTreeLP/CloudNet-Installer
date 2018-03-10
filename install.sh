@@ -81,7 +81,9 @@ install_java() {
 }
 
 update_package_cache() {
-	if ! ./pacapt -Sy 2>"/dev/null" 1>"/dev/null"; then
+	./pacapt -Sy 2>"/dev/null" 1>"/dev/null"
+	retval=$?
+	if [ "$retval" -eq 1 ]; then
 		echo "Error updating the package cache."
 		echo "Aborting installation."
 		exit 1
