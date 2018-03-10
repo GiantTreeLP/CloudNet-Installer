@@ -61,6 +61,9 @@ install_java() {
 				update_package_cache
 				install_package 'openjdk-8-jre-headless'
 				return
+			else
+				install_package 'openjdk-8-jre-headless'
+				return
 			fi
 		fi
 	fi
