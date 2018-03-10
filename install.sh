@@ -107,7 +107,7 @@ echo "Verifying download..."
 unzip -tq cloudnet.zip
 
 echo "Unpacking CloudNet..."
-unzip -q cloudnet.zip
+unzip -qf cloudnet.zip
 
 echo "Preparing start scripts..."
 chmod u+x "CloudNet-Master/start.sh" "CloudNet-Wrapper/start.sh"
