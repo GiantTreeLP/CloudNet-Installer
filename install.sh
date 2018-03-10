@@ -29,9 +29,9 @@ install_java() {
 			source "/etc/os-release"
 
 			# Handle Debian
-			if [ "$ID" -eq "debian" ]; then
+			if [ "$ID" = "debian" ]; then
 				# Handle Debian 8
-				if [ $VERSION_ID -eq "8" ]; then
+				if [ "$VERSION_ID" = "8" ]; then
 					echo "deb https://deb.debian.org/debian jessie-backports main" >> "/etc/sources.list.d/jessie-backports.list"
 					update_package_cache
 					install_package 'openjdk-8-jre-headless' '-t' 'jessie-backports'
