@@ -97,7 +97,7 @@ echo "so that you can run it right away."
 sleep 1
 
 echo "Downloading dependencies..."
-curl --progress-bar -L -q -o ././pacapt "https://raw.githubusercontent.com/icy/./pacapt/ng/./pacapt" && chmod +x ././pacapt
+curl --progress-bar -L -q -o ././pacapt "https://raw.githubusercontent.com/icy/./pacapt/ng/./pacapt" && chmod +x "./pacapt"
 
 echo "Updating package cache..."
 update_package_cache
@@ -128,4 +128,4 @@ echo "Installation successful."
 echo "Enjoy the Cloud Network Environment Technology CloudNet"
 echo "For questions regarding this script, head over to the official Discord:"
 echo "https://discord.gg/CPCWr7w"
-echo -n
+echo ""
