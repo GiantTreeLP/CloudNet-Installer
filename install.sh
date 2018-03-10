@@ -28,35 +28,33 @@ install_java() {
 		return
 	fi
 	if [ -f "/etc/os-release" ]; then
-		(
-			source "/etc/os-release"
+		source "/etc/os-release"
 
-			# Handle Debian
-			if [ "$ID" = "debian" -o "$ID_LIKE" = "debian" ]; then
-				# Handle slim versions
-				# https://github.com/debuerreotype/docker-debian-artifacts/issues/24
-				mkdir -p "/usr/share/man/man1"
-				
-				if [ "$VERSION_ID" = "8" ]; then
-					echo "Found Debian 8, using jessie-backports of Java 8"
-					echo "deb http://deb.debian.org/debian jessie-backports main" > "/etc/apt/sources.list.d/jessie-backports.list"
-					update_package_cache
-					install_package 'openjdk-8-jre-headless' '-t' 'jessie-backports'
-					return
-				elif [ "$VERSION_ID" > "8" ]; then
-					echo "Found modern Debian, Java 8 should be in the official sources"
-					install_package 'openjdk-8-jre-headless'
-					return
-				else
-					echo "Unsupported version of Debian."
-					echo "We are trying to install Java using the 'openjdk-8-jre-headless' package."
-					install_package 'openjdk-8-jre-headless'
-					return
-				fi
+		# Handle Debian
+		if [ "$ID" = "debian" -o "$ID_LIKE" = "debian" ]; then
+			# Handle slim versions
+			# https://github.com/debuerreotype/docker-debian-artifacts/issues/24
+			mkdir -p "/usr/share/man/man1"
+
+			if [ "$VERSION_ID" = "8" ]; then
+				echo "Found Debian 8, using jessie-backports of Java 8"
+				echo "deb http://deb.debian.org/debian jessie-backports main" >"/etc/apt/sources.list.d/jessie-backports.list"
+				update_package_cache
+				install_package 'openjdk-8-jre-headless' '-t' 'jessie-backports'
+				return
+			elif [ "$VERSION_ID" ] >"8"; then
+				echo "Found modern Debian, Java 8 should be in the official sources"
+				install_package 'openjdk-8-jre-headless'
+				return
+			else
+				echo "Unsupported version of Debian."
+				echo "We are trying to install Java using the 'openjdk-8-jre-headless' package."
+				install_package 'openjdk-8-jre-headless'
+				return
 			fi
-		)
+		fi
 	fi
-	
+
 	echo "Could not install java."
 	echo "Aborting installation."
 	exit 1
