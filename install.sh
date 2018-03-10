@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bsh
 #
 # CloudNet Installer
 # Automatically installs the CloudNet software and necessary dependencies.
@@ -10,7 +10,7 @@
 
 install_package() {
 	echo "Checking and installing '$@'..."
-	if ! ./pacapt -Qi "$1" >/dev/null 2>&1 > /dev/null; then
+	if ! ./pacapt -Qi "$1" >/dev/null 2>&1 1> "/dev/null"; then
 		if ! ./pacapt --noconfirm -S "$@"; then
 			echo "Error installing '$1'."
 			echo "Aborting installation."
@@ -61,7 +61,7 @@ install_java() {
 }
 
 update_package_cache() {
-	if ! ./pacapt -Sy; then
+	if ! ./pacapt -Sy 2>&1 1> "/dev/null"; then
 		echo "Error updating the package cache."
 		echo "Aborting installation."
 		exit 1
