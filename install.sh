@@ -102,8 +102,7 @@ echo "Updating package cache..."
 update_package_cache
 
 echo "Installing dependencies..."
-install_package 'screen'
-install_package 'unzip'
+install_package 'screen' 'unzip'
 install_java
 
 echo "Downloading CloudNet version 2.1Pv30..."
