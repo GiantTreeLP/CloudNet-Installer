@@ -26,7 +26,6 @@ install_java() {
 	if [ -f "/etc/os-release" ]; then
 		source "/etc/os-release"
 
-		# Handle Debian
 		if [ "$ID" = "debian" ]; then
 			# Handle slim versions
 			# https://github.com/debuerreotype/docker-debian-artifacts/issues/24
@@ -67,7 +66,7 @@ install_java() {
 			return
 		elif [ "$ID" = "arch" ]; then
 			echo "Choosing correct arch package."
-			install_java 'jre8-openjdk-headless'
+			install_package 'jre8-openjdk-headless'
 			return
 		fi
 
