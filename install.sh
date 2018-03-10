@@ -62,15 +62,15 @@ install_java() {
 				return
 			fi
 		elif [ "$ID" = "alpine" ]; then
-			echo "Choosing correct alpine package."
+			echo "Choosing correct $ID package."
 			install_package 'openjdk8-jre-base'
 			return
 		elif [ "$ID" = "arch" ]; then
-			echo "Choosing correct arch package."
+			echo "Choosing correct $ID package."
 			install_package 'jre8-openjdk-headless'
 			return
-		elif [ "$ID" = "centos" ]; then
-			echo "Choosing correct centos package."
+		elif [ "$ID" = "centos" -o "$ID" = "fedora" ]; then
+			echo "Choosing correct $ID package."
 			install_package 'java-1.8.0-openjdk-headless'
 			return
 		fi
