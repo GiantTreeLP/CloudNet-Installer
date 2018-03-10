@@ -28,6 +28,6 @@ All tests have been conducted on the slim images available for Docker.
 
 ## Running
 
-Simply run copy and paste the following code into your shell:
+Simply copy and paste the following code into your shell:
 
     curl -L "https://git.groundmc.net/GiantTree/CloudNet-Installer/raw/master/install.sh" | bash
