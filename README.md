@@ -9,9 +9,11 @@ Installer for the [Cloud Network Environment Technology](https://www.spigotmc.or
 ## Compatibility
 
 
-| Distribution |  Version   | Tested/Compatible |
-| ------------ | ---------- | ----------------- |
-| Debian       | 8 (Jessie) | ✅                |
+| Distribution |   Version   | Tested/Compatible |
+| ------------ | ----------- | ----------------- |
+| Debian       | 8 (Jessie)  | ✅                |
+| Debian       | 9 (Stretch) | ✅                |
+| Debian       | testing     | ✅                |
 
 
 
