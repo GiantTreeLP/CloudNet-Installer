@@ -6,6 +6,15 @@ Installer for the [Cloud Network Environment Technology](https://www.spigotmc.or
 
 [`curl`](https://curl.haxx.se/) has to be available to be able to download additional files.
 
+## Compatibility
+
+
+| Distribution |  Version   | Tested/Compatible |
+| ------------ | ---------- | ----------------- |
+| Debian       | 8 (Jessie) | ✅                |
+
+
+
 ## Running
 
 Simply run copy and paste the following code into your shell:
