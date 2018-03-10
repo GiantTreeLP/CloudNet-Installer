@@ -1,4 +1,4 @@
-#!/bin/bsh
+#!/bin/bash
 #
 # CloudNet Installer
 # Automatically installs the CloudNet software and necessary dependencies.
@@ -31,18 +31,18 @@ install_java() {
 		source "/etc/os-release"
 
 		# Handle Debian
-		if [ "$ID" = "debian" -o "$ID_LIKE" = "debian" ]; then
+		if [ "$ID" = "debian" ]; then
 			# Handle slim versions
 			# https://github.com/debuerreotype/docker-debian-artifacts/issues/24
 			mkdir -p "/usr/share/man/man1"
 
 			if [ "$VERSION_ID" = "8" ]; then
 				echo "Found Debian 8, using jessie-backports of Java 8"
-				echo "deb http://deb.debian.org/debian jessie-backports main" >"/etc/apt/sources.list.d/jessie-backports.list"
+				echo "deb http://deb.debian.org/debian jessie-backports main" > "/etc/apt/sources.list.d/jessie-backports.list"
 				update_package_cache
 				install_package 'openjdk-8-jre-headless' '-t' 'jessie-backports'
 				return
-			elif [ "$VERSION_ID" ] >"8"; then
+			elif [ "$VERSION_ID" ] > "8" ]; then
 				echo "Found modern Debian, Java 8 should be in the official sources"
 				install_package 'openjdk-8-jre-headless'
 				return
@@ -51,6 +51,15 @@ install_java() {
 				echo "We are trying to install Java using the 'openjdk-8-jre-headless' package."
 				install_package 'openjdk-8-jre-headless'
 				return
+			fi
+		elif [ "$ID" = "ubuntu" ]; then
+			if [ "$VERSION_ID" = "14.04" ]; then
+				echo "Found old version of Ubuntu."
+				echo "Using OpenJDK PPA..."
+				echo -e "deb http://ppa.launchpad.net/openjdk-r/ppa/ubuntu trusty main\ndeb-src http://ppa.launchpad.net/openjdk-r/ppa/ubuntu trusty main" > "/etc/apt/sources.list.d/ppa-openjdk.list"
+				apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 86F44E2A
+				update_package_cache
+				install_package 'openjdk-8-jre-headless'
 			fi
 		fi
 	fi
@@ -91,7 +100,7 @@ if [ $EUID -ne 0 ]; then
 	exit 2
 fi
 
-echo "Welcome to the CloudNet installer for version 2.1Pv30"
+echo "Welcome to the CloudNet installer for version 2.1.Pv30"
 echo "This script will download CloudNet and it's dependencies, so that you can run it right away."
 sleep 1
 
