@@ -106,7 +106,6 @@ echo "Updating package cache..."
 update_package_cache
 
 echo "Installing dependencies..."
-install_package 'man'
 install_package 'screen'
 install_package 'unzip'
 install_java
