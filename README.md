@@ -4,14 +4,19 @@ Installer for the [Cloud Network Environment Technology](https://www.spigotmc.or
 
 ## Version
 
-The installer is currently installing CloudNET version 2.1Pv30.
+The installer is currently installing CloudNet version 2.1.Pv30.
 
 ## Prequisites
 
 [`curl`](https://curl.haxx.se/) has to be available to be able to download additional files.
 
+For Debian-based distros, just run this code before installing CloudNet:
+
+    apt update && apt install curl -y
+
 ## Compatibility
 
+All tests have been conducted on the slim images available for Docker.
 
 | Distribution |   Version   | Tested/Compatible |
 | ------------ | ----------- | ----------------- |
