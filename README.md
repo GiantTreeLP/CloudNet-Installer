@@ -17,29 +17,33 @@ For Debian-based distros, just run this code before installing CloudNet:
 
     apt update && apt install curl -y
 
+On Alpine-based distributions, you need to add `curl` and `bash` manually:
+
+    apk update && apk add curl bash -y
+
 ## Compatibility
 
 All tests have been conducted on the slim images available for Docker.
 
 | Distribution |         Version         | Tested/Compatible |
 | ------------ | ----------------------- | ----------------- |
-| Debian       | 8 (Jessie)              | ✅                 |
-| Debian       | 9 (Stretch)             | ✅                 |
-| Debian       | testing                 | ✅                 |
+| Debian       | 8 (Jessie)              | ✅               |
+| Debian       | 9 (Stretch)             | ✅               |
+| Debian       | testing                 | ✅               |
 | ------------ | ----------------------- | ----------------- |
-| Ubuntu       | 14.04 (Trusty Tahr)     | ✅                 |
-| Ubuntu       | 16.04 (Xenial Xerus)    | ✅                 |
-| Ubuntu       | 17.10 (Artful Aardvark) | ✅                 |
+| Ubuntu       | 14.04 (Trusty Tahr)     | ✅               |
+| Ubuntu       | 16.04 (Xenial Xerus)    | ✅               |
+| Ubuntu       | 17.10 (Artful Aardvark) | ✅               |
 | ------------ | ----------------------- | ----------------- |
-| Alpine       | 3.7                     | ✅                 |
-| Alpine       | 3.6                     | ✅                 |
-| Alpine       | 3.5                     | ✅                 |
+| Alpine       | 3.7                     | ✅               |
+| Alpine       | 3.6                     | ✅               |
+| Alpine       | 3.5                     | ✅               |
 | ------------ | ----------------------- | ----------------- |
-| Arch Linux   | Latest                  | ✅                 |
+| Arch Linux   | Latest                  | ✅               |
 | ------------ | ----------------------- | ----------------- |
-| CentOS       | 7.4                     | ✅                 |
+| CentOS       | 7.4                     | ✅               |
 | ------------ | ----------------------- | ----------------- |
-| Fedora       | 27 (Twenty Seven)       | ✅                 |
+| Fedora       | 27 (Twenty Seven)       | ✅               |
 
 
 
