@@ -29,7 +29,7 @@ install_java() {
 			source "/etc/os-release"
 
 			# Handle Debian
-			if [ $ID -eq "debian" ]; then
+			if [ "$ID" -eq "debian" ]; then
 				# Handle Debian 8
 				if [ $VERSION_ID -eq "8" ]; then
 					echo "deb https://deb.debian.org/debian jessie-backports main" >> "/etc/sources.list.d/jessie-backports.list"
