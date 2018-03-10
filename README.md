@@ -5,3 +5,9 @@ Installer for the [Cloud Network Environment Technology](https://www.spigotmc.or
 ## Prequisites
 
 [`curl`](https://curl.haxx.se/) has to be available to be able to download additional files.
+
+## Running
+
+Simply run copy and paste the following code into your shell:
+
+    curl -L "https://git.groundmc.net/GiantTree/CloudNet-Installer/raw/master/install.sh" | bash
