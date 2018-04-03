@@ -15,7 +15,7 @@ pipeline {
                 rm -rf CloudNet-Test
                 mkdir CloudNet-Test
                 cd CloudNet-Test
-                curl -sL "https://git.groundmc.net/GiantTree/CloudNet-Installer/raw/master/install.sh" -O install.sh
+                curl -sL "https://git.groundmc.net/GiantTree/CloudNet-Installer/raw/branch/master/install.sh" -O install.sh
                 bash install.sh
                 '''
             }
