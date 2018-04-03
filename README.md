@@ -49,4 +49,5 @@ All tests have been conducted on the slim images available for Docker.
 | ------------ | ----------------------- | ----------------- |
 | CentOS       | 7.4                     | ✅               |
 | ------------ | ----------------------- | ----------------- |
+| Fedora       | 26 (Twenty Six)         | ✅               |
 | Fedora       | 27 (Twenty Seven)       | ✅               |

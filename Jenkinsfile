@@ -210,6 +210,24 @@ pipeline {
                         '''
                     }
                 }
+                stage('Fedora 26') {
+                    agent {
+                        docker { 
+                            image 'fedora:26'
+                            args '-u root:root'
+                        }
+                    }
+                    steps {
+                        sh '''#!/bin/bash
+                        cd /root/
+                        rm -rf CloudNet-Test
+                        mkdir CloudNet-Test
+                        cd CloudNet-Test
+                        curl -sL "https://git.groundmc.net/GiantTree/CloudNet-Installer/raw/branch/master/install.sh" -O install.sh
+                        bash install.sh
+                        '''
+                    }
+                }
                 stage('Fedora 27') {
                     agent {
                         docker { 
