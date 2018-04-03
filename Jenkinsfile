@@ -1,12 +1,11 @@
 pipeline {
-    agent none
+    agent {
+        docker { image 'node:7-alpine' }
+    }
     stages {
-        stage('Debian8-Slim') {
-            agent {
-                docker { image 'debian:8-slim' }
-            }
+        stage('Test') {
             steps {
-                sh 'curl -sL "https://git.groundmc.net/GiantTree/CloudNet-Installer/raw/master/install.sh" | bash'
+                sh 'node --version'
             }
         }
     }
