@@ -1,11 +1,12 @@
 pipeline {
-    agent {
-        docker { image 'node:7-alpine' }
-    }
+    agent none
     stages {
         stage('Test') {
+            agent {
+                docker { image 'debian:8-slim' }
+            }
             steps {
-                sh 'node --version'
+                sh 'uname -a'
             }
         }
     }
