@@ -1,7 +1,7 @@
 pipeline {
     agent none
     stages {
-        stage('Debian 8 Slim') {
+        stage('Debian8-Slim') {
             agent {
                 docker { image 'debian:8-slim' }
             }
