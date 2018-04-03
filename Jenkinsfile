@@ -6,6 +6,7 @@ pipeline {
                 docker { image 'debian:8-slim' }
             }
             steps {
+                sh 'whoami; id'
                 sh 'apt-get update && apt-get install curl'
                 sh 'mkdir CloudNet-Test'
                 sh 'cd CloudNet-Test'
