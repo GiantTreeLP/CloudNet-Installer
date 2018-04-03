@@ -6,7 +6,7 @@ pipeline {
                 docker { image 'debian:8-slim' }
             }
             steps {
-                sh 'uname -a'
+                sh 'ls -la'
             }
         }
     }
