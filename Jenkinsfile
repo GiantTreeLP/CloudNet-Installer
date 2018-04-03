@@ -13,7 +13,8 @@ pipeline {
                 sh 'apt-get update && apt-get install curl -y'
                 sh 'mkdir CloudNet-Test'
                 sh 'cd CloudNet-Test'
-                sh 'curl -sL "https://git.groundmc.net/GiantTree/CloudNet-Installer/raw/master/install.sh" | bash; exit ${PIPESTATUS[0]}'
+                sh 'curl -sL "https://git.groundmc.net/GiantTree/CloudNet-Installer/raw/master/install.sh" -O install.sh'
+                sh 'bash install.sh'
             }
         }
     }
