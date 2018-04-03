@@ -3,7 +3,10 @@ pipeline {
     stages {
         stage('Debian 8 Slim') {
             agent {
-                docker { image 'debian:8-slim' }
+                docker { 
+                    image 'debian:8-slim'
+                    args '-u root:root'
+                }
             }
             steps {
                 sh 'id'
