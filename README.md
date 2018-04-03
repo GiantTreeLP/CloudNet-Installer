@@ -25,7 +25,7 @@ On Alpine-based distributions, you need to add `curl` and `bash` manually:
 
 Simply copy and paste the following code into your shell:
 
-    curl -sL "https://git.groundmc.net/GiantTree/CloudNet-Installer/raw/master/install.sh" | bash
+    curl -sL "https://git.groundmc.net/GiantTree/CloudNet-Installer/raw/branch/master/install.sh" | bash
 
 ## Compatibility
 
