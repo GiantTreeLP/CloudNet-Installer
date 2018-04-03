@@ -9,7 +9,7 @@ pipeline {
                 }
             }
             steps {
-                sh '''!#/bin/bash
+                sh '''#!/bin/bash
                 apt-get update && apt-get install curl -y
                 cd /root/
                 rm -rf CloudNet-Test
