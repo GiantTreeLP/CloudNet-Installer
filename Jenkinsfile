@@ -1,11 +1,12 @@
 pipeline {
-    agent { label 'docker' }
+    agent none
     stages {
         stage ('Run tests') {
             parallel {
                 stage('Debian 8 Slim') {
                     agent {
-                        docker { 
+                        docker {
+                            label 'docker'
                             image 'debian:8-slim'
                             args '-u root:root'
                         }
@@ -24,7 +25,8 @@ pipeline {
                 }
                 stage('Debian 9 Slim') {
                     agent {
-                        docker { 
+                        docker {
+                            label 'docker'
                             image 'debian:9-slim'
                             args '-u root:root'
                         }
@@ -43,7 +45,8 @@ pipeline {
                 }
                 stage('Debian Testing Slim') {
                     agent {
-                        docker { 
+                        docker {
+                            label 'docker'
                             image 'debian:testing-slim'
                             args '-u root:root'
                         }
@@ -62,7 +65,8 @@ pipeline {
                 }
                 stage('Ubuntu 14.04') {
                     agent {
-                        docker { 
+                        docker {
+                            label 'docker'
                             image 'ubuntu:14.04'
                             args '-u root:root'
                         }
@@ -81,7 +85,8 @@ pipeline {
                 }
                 stage('Ubuntu 16.04') {
                     agent {
-                        docker { 
+                        docker {
+                            label 'docker'
                             image 'ubuntu:16.04'
                             args '-u root:root'
                         }
@@ -100,7 +105,8 @@ pipeline {
                 }
                 stage('Ubuntu 17.10') {
                     agent {
-                        docker { 
+                        docker {
+                            label 'docker'
                             image 'ubuntu:17.10'
                             args '-u root:root'
                         }
@@ -119,7 +125,8 @@ pipeline {
                 }
                 stage('Alpine 3.5') {
                     agent {
-                        docker { 
+                        docker {
+                            label 'docker'
                             image 'alpine:3.5'
                             args '-u root:root'
                         }
@@ -138,7 +145,8 @@ pipeline {
                 }
                 stage('Alpine 3.6') {
                     agent {
-                        docker { 
+                        docker {
+                            label 'docker'
                             image 'alpine:3.6'
                             args '-u root:root'
                         }
@@ -157,7 +165,8 @@ pipeline {
                 }
                 stage('Alpine 3.7') {
                     agent {
-                        docker { 
+                        docker {
+                            label 'docker'
                             image 'alpine:3.7'
                             args '-u root:root'
                         }
@@ -176,7 +185,8 @@ pipeline {
                 }
                 stage('ArchLinux') {
                     agent {
-                        docker { 
+                        docker {
+                            label 'docker'
                             image 'base/archlinux'
                             args '-u root:root'
                         }
@@ -194,7 +204,8 @@ pipeline {
                 }
                 stage('CentOS 7') {
                     agent {
-                        docker { 
+                        docker {
+                            label 'docker'
                             image 'centos:7'
                             args '-u root:root'
                         }
@@ -212,7 +223,8 @@ pipeline {
                 }
                 stage('Fedora 26') {
                     agent {
-                        docker { 
+                        docker {
+                            label 'docker'
                             image 'fedora:26'
                             args '-u root:root'
                         }
@@ -230,7 +242,8 @@ pipeline {
                 }
                 stage('Fedora 27') {
                     agent {
-                        docker { 
+                        docker {
+                            label 'docker'
                             image 'fedora:27'
                             args '-u root:root'
                         }
