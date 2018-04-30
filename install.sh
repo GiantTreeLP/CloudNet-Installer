@@ -132,7 +132,7 @@ echo "Installing dependencies..."
 install_package 'screen' 'unzip'
 install_java
 
-echo "Downloading CloudNet version 2.1Pv30..."
+echo "Downloading CloudNet version 2.1PreLF1..."
 curl --progress-bar -L -q -o "cloudnet.zip" "http://dytanic.de/cloudnet/version/pre/2.1.PreLastFix1/CloudNet.zip"
 
 echo "Verifying download..."
