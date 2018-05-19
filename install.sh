@@ -38,7 +38,7 @@ install_java() {
 				update_package_cache
 				install_package 'openjdk-8-jre-headless' '-t' 'jessie-backports'
 				return
-			elif [ "$VERSION_ID" ] ] >"8"; then
+			elif [ "$VERSION_ID" > "8" ]; then
 				echo "Found modern Debian, Java 8 should be in the official sources"
 				install_package 'openjdk-8-jre-headless'
 				return
