@@ -29,27 +29,30 @@ Simply copy and paste the following code into your shell:
 
     curl -sL "https://git.groundmc.net/GiantTree/CloudNet-Installer/raw/branch/master/install.sh" | bash
 
+Launching the installer as the `root` user checks and installs all necessary dependencies.  
+Launching the installer as a non-root user skips this step.
+
 ## Compatibility
 
 All tests have been conducted on the slim images available for Docker.
 
-| Distribution |         Version         | Tested/Compatible |
+| Distribution | Version                 | Tested/Compatible |
 | ------------ | ----------------------- | ----------------- |
-| Debian       | 8 (Jessie)              | ✅               |
-| Debian       | 9 (Stretch)             | ✅               |
-| Debian       | testing                 | ✅               |
+| Debian       | 8 (Jessie)              | ✅                |
+| Debian       | 9 (Stretch)             | ✅                |
+| Debian       | testing                 | ✅                |
 | ------------ | ----------------------- | ----------------- |
-| Ubuntu       | 14.04 (Trusty Tahr)     | ✅               |
-| Ubuntu       | 16.04 (Xenial Xerus)    | ✅               |
-| Ubuntu       | 17.10 (Artful Aardvark) | ✅               |
+| Ubuntu       | 14.04 (Trusty Tahr)     | ✅                |
+| Ubuntu       | 16.04 (Xenial Xerus)    | ✅                |
+| Ubuntu       | 17.10 (Artful Aardvark) | ✅                |
 | ------------ | ----------------------- | ----------------- |
-| Alpine       | 3.7                     | ✅               |
-| Alpine       | 3.6                     | ✅               |
-| Alpine       | 3.5                     | ✅               |
+| Alpine       | 3.7                     | ✅                |
+| Alpine       | 3.6                     | ✅                |
+| Alpine       | 3.5                     | ✅                |
 | ------------ | ----------------------- | ----------------- |
-| Arch Linux   | Latest                  | ✅               |
+| Arch Linux   | Latest                  | ✅                |
 | ------------ | ----------------------- | ----------------- |
-| CentOS       | 7.4                     | ✅               |
+| CentOS       | 7.4                     | ✅                |
 | ------------ | ----------------------- | ----------------- |
-| Fedora       | 26 (Twenty Six)         | ✅               |
-| Fedora       | 27 (Twenty Seven)       | ✅               |
+| Fedora       | 26 (Twenty Six)         | ✅                |
+| Fedora       | 27 (Twenty Seven)       | ✅                |
