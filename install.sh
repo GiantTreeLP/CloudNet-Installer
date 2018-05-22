@@ -111,26 +111,28 @@ check_incompatibilities() {
 	fi
 }
 
-echo "NOTICE: The installation requires root permissions to succeed!"
+echo "NOTICE: The installation requires root permissions to install dependencies!"
 
 if [ $EUID -ne 0 ]; then
-	echo "Error: Must be root!"
-	exit 2
+	echo "Non-root user detected."
+	echo "Dependencies will be skipped!"
 fi
 
 echo "Welcome to the CloudNet installer for version 2.1.PreLF1"
 echo "This script will download CloudNet and it's dependencies, so that you can run it right away."
 sleep 1
 
-echo "Downloading dependencies..."
-curl --progress-bar -L -q -o "./pacapt" "https://raw.githubusercontent.com/icy/pacapt/ng/pacapt" && chmod +x "./pacapt"
+if [ $EUID -eq 0 ]; then
+	echo "Downloading dependencies..."
+	curl --progress-bar -L -q -o "./pacapt" "https://raw.githubusercontent.com/icy/pacapt/ng/pacapt" && chmod +x "./pacapt"
 
-echo "Updating package cache..."
-update_package_cache
+	echo "Updating package cache..."
+	update_package_cache
 
-echo "Installing dependencies..."
-install_package 'screen' 'unzip'
-install_java
+	echo "Installing dependencies..."
+	install_package 'screen' 'unzip'
+	install_java
+fi
 
 echo "Downloading CloudNet version 2.1PreLF1..."
 curl --progress-bar -L -q -o "cloudnet.zip" "http://dytanic.de/cloudnet/version/pre/2.1.PreLastFix1/CloudNet.zip"
