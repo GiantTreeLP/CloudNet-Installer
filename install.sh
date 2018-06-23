@@ -6,7 +6,7 @@
 #
 # Author: GiantTree
 # Version: 0.3
-# Compatible with CloudNet version 2.1.PreLF1
+# Compatible with CloudNet version 2.1.5
 
 install_package() {
 	echo "Checking and installing '$@'..."
@@ -118,7 +118,7 @@ if [ $EUID -ne 0 ]; then
 	echo "Dependencies will be skipped!"
 fi
 
-echo "Welcome to the CloudNet installer for version 2.1.PreLF1"
+echo "Welcome to the CloudNet installer for version 2.1.5"
 echo "This script will download CloudNet and it's dependencies, so that you can run it right away."
 sleep 1
 
@@ -134,8 +134,8 @@ if [ $EUID -eq 0 ]; then
 	install_java
 fi
 
-echo "Downloading CloudNet version 2.1PreLF1..."
-curl --progress-bar -L -q -o "cloudnet.zip" "http://dytanic.de/cloudnet/version/pre/2.1.PreLastFix1/CloudNet.zip"
+echo "Downloading CloudNet version 2.1.5..."
+curl --progress-bar -L -q -o "cloudnet.zip" "https://cloudnetservice.eu/cloudnet/version/pre/2.1.5/CloudNet.zip"
 
 echo "Verifying download..."
 unzip -tq "cloudnet.zip"
