@@ -8,7 +8,7 @@ Uses [`pacapt`](https://github.com/icy/pacapt) for compatibility with as many di
 
 ## Version
 
-The installer is currently installing CloudNet version 2.1.PreLF1.
+The installer is currently installing CloudNet version 2.1.5.
 
 ## Prequisites
 
