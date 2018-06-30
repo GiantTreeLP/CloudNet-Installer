@@ -36,23 +36,21 @@ Launching the installer as a non-root user skips this step.
 
 All tests have been conducted on the slim images available for Docker.
 
-| Distribution | Version                 | Tested/Compatible |
-| ------------ | ----------------------- | ----------------- |
-| Debian       | 8 (Jessie)              | ✅                |
-| Debian       | 9 (Stretch)             | ✅                |
-| Debian       | testing                 | ✅                |
-| ------------ | ----------------------- | ----------------- |
-| Ubuntu       | 14.04 (Trusty Tahr)     | ✅                |
-| Ubuntu       | 16.04 (Xenial Xerus)    | ✅                |
-| Ubuntu       | 17.10 (Artful Aardvark) | ✅                |
-| ------------ | ----------------------- | ----------------- |
-| Alpine       | 3.7                     | ✅                |
-| Alpine       | 3.6                     | ✅                |
-| Alpine       | 3.5                     | ✅                |
-| ------------ | ----------------------- | ----------------- |
-| Arch Linux   | Latest                  | ✅                |
-| ------------ | ----------------------- | ----------------- |
-| CentOS       | 7.4                     | ✅                |
-| ------------ | ----------------------- | ----------------- |
-| Fedora       | 26 (Twenty Six)         | ✅                |
-| Fedora       | 27 (Twenty Seven)       | ✅                |
+| Distribution   | Version                 | Tested/Compatible                   |
+| :------------- | :---------------------- | :---------------------------------- |
+| **Debian**     | 8 (Jessie)              | ✅                                   |
+| Debian         | 9 (Stretch)             | ✅                                   |
+| Debian         | testing                 | ✅                                   |
+| **Ubuntu**     | 14.04 (Trusty Tahr)     | ✅                                   |
+| Ubuntu         | 16.04 (Xenial Xerus)    | ✅                                   |
+| Ubuntu         | 17.10 (Artful Aardvark) | ✅                                   |
+| Ubuntu         | 18.04 (Bionic Beaver)   | ✅                                   |
+| **Alpine**     | 3.8                     | ✅ (probably but Docker Hub is slow) |
+| Alpine         | 3.7                     | ✅                                   |
+| Alpine         | 3.6                     | ✅                                   |
+| Alpine         | 3.5                     | ✅                                   |
+| **Arch Linux** | Latest                  | ✅                                   |
+| **CentOS**     | 7 (latest)              | ✅                                   |
+| **Fedora**     | 26 (Twenty Six)         | ✅                                   |
+| Fedora         | 27 (Twenty Seven)       | ✅                                   |
+| Fedora         | 28 (Twenty Eight)       | ✅                                   |
