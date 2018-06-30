@@ -15,11 +15,15 @@ The installer is currently installing CloudNet version 2.1.6.
 [`curl`](https://curl.haxx.se/) has to be available to be able to download additional files.  
 [`bash`](https://www.gnu.org/software/bash/) is necessary for `pacapt` to work. This script has also only been tested with bash.
 
-For Debian-based distros, just run this code before installing CloudNet:
+### Debian-based distributions (Debian, Ubuntu, Linux Mint):
+
+Just run this code before installing CloudNet:
 
     apt update && apt install curl -y
 
-On Alpine-based distributions, you need to add `curl` and `bash` manually:
+### Alpine-based distributions:
+
+You need to add `curl` and `bash` manually:
 
     apk add curl bash -y --no-cache
 
@@ -34,7 +38,7 @@ Launching the installer as a non-root user skips this step.
 
 ## Compatibility
 
-All tests have been conducted on the slim images available for Docker.
+All tests have been conducted with the slim images available for Docker, where possible.
 
 | Distribution   | Version                 | Tested/Compatible                   |
 | :------------- | :---------------------- | :---------------------------------- |
