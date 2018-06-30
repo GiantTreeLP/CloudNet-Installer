@@ -5,11 +5,11 @@
 # Additionally checks for issues regarding other running services.
 #
 # Author: GiantTree
-# Version: 0.3
+# Version: 0.4
 # Compatible with CloudNet version 2.1.5
 
 install_package() {
-	echo "Checking and installing '$@'..."
+	echo "Checking and installing" '$@' "..."
 	if ! ./pacapt --noconfirm -S "$@" 2>"/dev/null" 1>"/dev/null"; then
 		echo "Error installing '$1'."
 		echo "Aborting installation."
@@ -18,7 +18,7 @@ install_package() {
 }
 
 install_java() {
-	if [ -x "$(which java)" ]; then
+	if [ -x "$(command -v java)" ]; then
 		echo "Found a valid installation of Java."
 		echo "Please make sure it is compatible with CloudNet."
 		return
@@ -38,7 +38,7 @@ install_java() {
 				update_package_cache
 				install_package 'openjdk-8-jre-headless' '-t' 'jessie-backports'
 				return
-			elif [ "$VERSION_ID" > "8" ]; then
+			elif [ "$VERSION_ID" -gt "8" ]; then
 				echo "Found modern Debian, Java 8 should be in the official sources"
 				install_package 'openjdk-8-jre-headless'
 				return
@@ -52,7 +52,7 @@ install_java() {
 			if [ "$VERSION_ID" = "14.04" ]; then
 				echo "Found old version of Ubuntu."
 				echo "Using OpenJDK PPA..."
-				echo -e "deb http://ppa.launchpad.net/openjdk-r/ppa/ubuntu trusty main\ndeb-src http://ppa.launchpad.net/openjdk-r/ppa/ubuntu trusty main" >"/etc/apt/sources.list.d/ppa-openjdk.list"
+				echo -e "deb http://ppa.launchpad.net/openjdk-r/ppa/ubuntu trusty main\\ndeb-src http://ppa.launchpad.net/openjdk-r/ppa/ubuntu trusty main" >"/etc/apt/sources.list.d/ppa-openjdk.list"
 				apt-key adv --keyserver "keyserver.ubuntu.com" --recv-keys "86F44E2A" 2>"/dev/null" 1>"/dev/null"
 				update_package_cache
 				install_package 'openjdk-8-jre-headless'
@@ -69,7 +69,7 @@ install_java() {
 			echo "Choosing correct $ID package."
 			install_package 'jre8-openjdk-headless'
 			return
-		elif [ "$ID" = "centos" -o "$ID" = "fedora" ]; then
+		elif [ "$ID" = "centos" ] || [ "$ID" = "fedora" ]; then
 			echo "Choosing correct $ID package."
 			install_package 'java-1.8.0-openjdk-headless'
 			return
@@ -96,7 +96,7 @@ update_package_cache() {
 }
 
 check_incompatibilities() {
-	if [ ! -x "$(which fuser)" ]; then
+	if [ ! -x "$(command -v fuser)" ]; then
 		return
 	fi
 	echo "Checking for incompatibilities..."
