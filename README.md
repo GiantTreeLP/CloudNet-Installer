@@ -3,7 +3,7 @@
 [![Test status](https://ci.groundmc.net/buildStatus/icon?job=GiantTree/CloudNet-Installer/master)](https://ci.groundmc.net/job/GiantTree/job/CloudNet-Installer/job/master/)
 [![GitHub issues](https://img.shields.io/github/issues/GiantTreeLP/CloudNet-Installer.svg)](https://github.com/GiantTreeLP/CloudNet-Installer/issues)
 [![GitHub stars](https://img.shields.io/github/stars/GiantTreeLP/CloudNet-Installer.svg)](https://github.com/GiantTreeLP/CloudNet-Installer/stargazers)
-[![GitHub license](https://img.shields.io/github/license/GiantTreeLP/CloudNet-Installer.svg)](https://github.com/GiantTreeLP/CloudNet-Installer)
+[![GitHub license](https://img.shields.io/github/license/GiantTreeLP/CloudNet-Installer.svg)](https://github.com/GiantTreeLP/CloudNet-Installer/blob/master/LICENSE)
 
 
 Installer for the [Cloud Network Environment Technology](https://www.spigotmc.org/resources/cloudnet-the-cloud-network-environment-technology.42059/).
