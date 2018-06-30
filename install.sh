@@ -9,7 +9,7 @@
 # Compatible with CloudNet version 2.1.5
 
 install_package() {
-	echo "Checking and installing" '$@' "..."
+	echo "Checking and installing" "$@" "..."
 	if ! ./pacapt --noconfirm -S "$@" 2>"/dev/null" 1>"/dev/null"; then
 		echo "Error installing '$1'."
 		echo "Aborting installation."
