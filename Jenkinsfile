@@ -203,6 +203,26 @@ pipeline {
                         '''
                     }
                 }
+                stage('Alpine 3.8') {
+                    agent {
+                        docker {
+                            label 'docker'
+                            image 'alpine:3.8'
+                            args '-u root:root'
+                        }
+                    }
+                    steps {
+                        sh '''#!/bin/sh
+                        apk add --no-cache bash curl
+                        cd /root/
+                        rm -rf CloudNet-Test
+                        mkdir CloudNet-Test
+                        cd CloudNet-Test
+                        curl -sL "https://git.groundmc.net/GiantTree/CloudNet-Installer/raw/branch/master/install.sh" -O install.sh
+                        bash install.sh
+                        '''
+                    }
+                }
                 stage('ArchLinux') {
                     agent {
                         docker {
