@@ -123,6 +123,26 @@ pipeline {
                         '''
                     }
                 }
+                stage('Ubuntu 18.04') {
+                    agent {
+                        docker {
+                            label 'docker'
+                            image 'ubuntu:18.04'
+                            args '-u root:root'
+                        }
+                    }
+                    steps {
+                        sh '''#!/bin/bash
+                        apt-get update && apt-get install curl -y
+                        cd /root/
+                        rm -rf CloudNet-Test
+                        mkdir CloudNet-Test
+                        cd CloudNet-Test
+                        curl -sL "https://git.groundmc.net/GiantTree/CloudNet-Installer/raw/branch/master/install.sh" -O install.sh
+                        bash install.sh
+                        '''
+                    }
+                }
                 stage('Alpine 3.5') {
                     agent {
                         docker {
