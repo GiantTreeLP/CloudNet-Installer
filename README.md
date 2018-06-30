@@ -41,14 +41,11 @@ All tests have been conducted on the slim images available for Docker.
 | **Debian**     | 8 (Jessie)              | ✅                                   |
 | Debian         | 9 (Stretch)             | ✅                                   |
 | Debian         | testing                 | ✅                                   |
-| **Ubuntu**     | 14.04 (Trusty Tahr)     | ✅                                   |
-| Ubuntu         | 16.04 (Xenial Xerus)    | ✅                                   |
+| **Ubuntu**     | 18.04 (Bionic Beaver)   | ✅                                   |
 | Ubuntu         | 17.10 (Artful Aardvark) | ✅                                   |
-| Ubuntu         | 18.04 (Bionic Beaver)   | ✅                                   |
+| Ubuntu         | 16.04 (Xenial Xerus)    | ✅                                   |
 | **Alpine**     | 3.8                     | ✅ (probably but Docker Hub is slow) |
 | Alpine         | 3.7                     | ✅                                   |
-| Alpine         | 3.6                     | ✅                                   |
-| Alpine         | 3.5                     | ✅                                   |
 | **Arch Linux** | Latest                  | ✅                                   |
 | **CentOS**     | 7 (latest)              | ✅                                   |
 | **Fedora**     | 26 (Twenty Six)         | ✅                                   |
