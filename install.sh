@@ -6,7 +6,7 @@
 #
 # Author: GiantTree
 # Version: 0.3
-# Compatible with CloudNet version 2.1.5
+# Compatible with CloudNet version 2.1.6
 
 install_package() {
 	echo "Checking and installing '$@'..."
@@ -134,8 +134,8 @@ if [ $EUID -eq 0 ]; then
 	install_java
 fi
 
-echo "Downloading CloudNet version 2.1.5..."
-curl --progress-bar -L -q -o "cloudnet.zip" "https://cloudnetservice.eu/cloudnet/version/pre/2.1.5/CloudNet.zip"
+echo "Downloading CloudNet version 2.1.6..."
+curl --progress-bar -L -q -o "cloudnet.zip" "https://cloudnetservice.eu/cloudnet/version/pre/2.1.6/CloudNet.zip"
 
 echo "Verifying download..."
 unzip -tq "cloudnet.zip"
