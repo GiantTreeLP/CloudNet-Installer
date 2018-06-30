@@ -2,13 +2,13 @@
 
 [![Test status](https://ci.groundmc.net/buildStatus/icon?job=GiantTree/CloudNet-Installer/master)](https://ci.groundmc.net/job/GiantTree/job/CloudNet-Installer/job/master/)
 
-Installer for the [Cloud Network Environment Technology](https://www.spigotmc.org/resources/cloudnet-the-cloud-network-environment-technology.42059/).
+Installer for the [Cloud Network Environment Technology](https://github.com/CloudNetService/CloudNet).
 
 Uses [`pacapt`](https://github.com/icy/pacapt) for compatibility with as many distributions as possible.
 
 ## Version
 
-The installer is currently installing CloudNet version 2.1.5.
+The installer is currently installing CloudNet version 2.1.6.
 
 ## Prequisites
 
