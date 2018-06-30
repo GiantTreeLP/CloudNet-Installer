@@ -63,26 +63,6 @@ pipeline {
                         '''
                     }
                 }
-                stage('Ubuntu 14.04') {
-                    agent {
-                        docker {
-                            label 'docker'
-                            image 'ubuntu:14.04'
-                            args '-u root:root'
-                        }
-                    }
-                    steps {
-                        sh '''#!/bin/bash
-                        apt-get update && apt-get install curl -y
-                        cd /root/
-                        rm -rf CloudNet-Test
-                        mkdir CloudNet-Test
-                        cd CloudNet-Test
-                        curl -sL "https://git.groundmc.net/GiantTree/CloudNet-Installer/raw/branch/master/install.sh" -O install.sh
-                        bash install.sh
-                        '''
-                    }
-                }
                 stage('Ubuntu 16.04') {
                     agent {
                         docker {
@@ -134,46 +114,6 @@ pipeline {
                     steps {
                         sh '''#!/bin/bash
                         apt-get update && apt-get install curl -y
-                        cd /root/
-                        rm -rf CloudNet-Test
-                        mkdir CloudNet-Test
-                        cd CloudNet-Test
-                        curl -sL "https://git.groundmc.net/GiantTree/CloudNet-Installer/raw/branch/master/install.sh" -O install.sh
-                        bash install.sh
-                        '''
-                    }
-                }
-                stage('Alpine 3.5') {
-                    agent {
-                        docker {
-                            label 'docker'
-                            image 'alpine:3.5'
-                            args '-u root:root'
-                        }
-                    }
-                    steps {
-                        sh '''#!/bin/sh
-                        apk add --no-cache bash curl
-                        cd /root/
-                        rm -rf CloudNet-Test
-                        mkdir CloudNet-Test
-                        cd CloudNet-Test
-                        curl -sL "https://git.groundmc.net/GiantTree/CloudNet-Installer/raw/branch/master/install.sh" -O install.sh
-                        bash install.sh
-                        '''
-                    }
-                }
-                stage('Alpine 3.6') {
-                    agent {
-                        docker {
-                            label 'docker'
-                            image 'alpine:3.6'
-                            args '-u root:root'
-                        }
-                    }
-                    steps {
-                        sh '''#!/bin/sh
-                        apk add --no-cache bash curl
                         cd /root/
                         rm -rf CloudNet-Test
                         mkdir CloudNet-Test
