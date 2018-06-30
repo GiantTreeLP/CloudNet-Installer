@@ -48,6 +48,6 @@ All tests have been conducted on the slim images available for Docker.
 | Alpine         | 3.7                     | ✅                                   |
 | **Arch Linux** | Latest                  | ✅                                   |
 | **CentOS**     | 7 (latest)              | ✅                                   |
-| **Fedora**     | 26 (Twenty Six)         | ✅                                   |
-| Fedora         | 27 (Twenty Seven)       | ✅                                   |
+| **Fedora**     | 27 (Twenty Seven)       | ✅                                   |
 | Fedora         | 28 (Twenty Eight)       | ✅                                   |
+| Fedora         | 26 (Twenty Six)         | ✅                                   |
