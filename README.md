@@ -6,24 +6,28 @@
 [![GitHub license](https://img.shields.io/github/license/GiantTreeLP/CloudNet-Installer.svg)](https://github.com/GiantTreeLP/CloudNet-Installer/blob/master/LICENSE)
 
 
-Installer for the [Cloud Network Environment Technology](https://www.spigotmc.org/resources/cloudnet-the-cloud-network-environment-technology.42059/).
+Installer for the [Cloud Network Environment Technology](https://github.com/CloudNetService/CloudNet).
 
 Uses [`pacapt`](https://github.com/icy/pacapt) for compatibility with as many distributions as possible.
 
 ## Version
 
-The installer is currently installing CloudNet version 2.1.5.
+The installer is currently installing CloudNet version 2.1.6.
 
 ## Prequisites
 
 [`curl`](https://curl.haxx.se/) has to be available to be able to download additional files.  
 [`bash`](https://www.gnu.org/software/bash/) is necessary for `pacapt` to work. This script has also only been tested with bash.
 
-For Debian-based distros, just run this code before installing CloudNet:
+### Debian-based distributions (Debian, Ubuntu, Linux Mint):
+
+Just run this code before installing CloudNet:
 
     apt update && apt install curl -y
 
-On Alpine-based distributions, you need to add `curl` and `bash` manually:
+### Alpine-based distributions:
+
+You need to add `curl` and `bash` manually:
 
     apk add curl bash -y --no-cache
 
@@ -38,25 +42,20 @@ Launching the installer as a non-root user skips this step.
 
 ## Compatibility
 
-All tests have been conducted on the slim images available for Docker.
+All tests have been conducted with the slim images available for Docker, where possible.
 
-| Distribution | Version                 | Tested/Compatible |
-| ------------ | ----------------------- | ----------------- |
-| Debian       | 8 (Jessie)              | ✅                |
-| Debian       | 9 (Stretch)             | ✅                |
-| Debian       | testing                 | ✅                |
-| ------------ | ----------------------- | ----------------- |
-| Ubuntu       | 14.04 (Trusty Tahr)     | ✅                |
-| Ubuntu       | 16.04 (Xenial Xerus)    | ✅                |
-| Ubuntu       | 17.10 (Artful Aardvark) | ✅                |
-| ------------ | ----------------------- | ----------------- |
-| Alpine       | 3.7                     | ✅                |
-| Alpine       | 3.6                     | ✅                |
-| Alpine       | 3.5                     | ✅                |
-| ------------ | ----------------------- | ----------------- |
-| Arch Linux   | Latest                  | ✅                |
-| ------------ | ----------------------- | ----------------- |
-| CentOS       | 7.4                     | ✅                |
-| ------------ | ----------------------- | ----------------- |
-| Fedora       | 26 (Twenty Six)         | ✅                |
-| Fedora       | 27 (Twenty Seven)       | ✅                |
+| Distribution   | Version                 | Tested/Compatible                   |
+| :------------- | :---------------------- | :---------------------------------- |
+| **Debian**     | 8 (Jessie)              | ✅                                   |
+| Debian         | 9 (Stretch)             | ✅                                   |
+| Debian         | testing                 | ✅                                   |
+| **Ubuntu**     | 18.04 (Bionic Beaver)   | ✅                                   |
+| Ubuntu         | 17.10 (Artful Aardvark) | ✅                                   |
+| Ubuntu         | 16.04 (Xenial Xerus)    | ✅                                   |
+| **Alpine**     | 3.8                     | ✅ (probably but Docker Hub is slow) |
+| Alpine         | 3.7                     | ✅                                   |
+| **Arch Linux** | Latest                  | ✅                                   |
+| **CentOS**     | 7 (latest)              | ✅                                   |
+| **Fedora**     | 27 (Twenty Seven)       | ✅                                   |
+| Fedora         | 28 (Twenty Eight)       | ✅                                   |
+| Fedora         | 26 (Twenty Six)         | ✅                                   |
