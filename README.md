@@ -44,18 +44,18 @@ Launching the installer as a non-root user skips this step.
 
 All tests have been conducted with the slim images available for Docker, where possible.
 
-| Distribution   | Version                 | Tested/Compatible                   |
-| :------------- | :---------------------- | :---------------------------------- |
-| **Debian**     | 8 (Jessie)              | ✅                                   |
-| Debian         | 9 (Stretch)             | ✅                                   |
-| Debian         | testing                 | ✅                                   |
-| **Ubuntu**     | 18.04 (Bionic Beaver)   | ✅                                   |
-| Ubuntu         | 17.10 (Artful Aardvark) | ✅                                   |
-| Ubuntu         | 16.04 (Xenial Xerus)    | ✅                                   |
-| **Alpine**     | 3.8                     | ✅ (probably but Docker Hub is slow) |
-| Alpine         | 3.7                     | ✅                                   |
-| **Arch Linux** | Latest                  | ✅                                   |
-| **CentOS**     | 7 (latest)              | ✅                                   |
-| **Fedora**     | 27 (Twenty Seven)       | ✅                                   |
-| Fedora         | 28 (Twenty Eight)       | ✅                                   |
-| Fedora         | 26 (Twenty Six)         | ✅                                   |
+| Distribution   | Version                 | Tested/Compatible |
+| :------------- | :---------------------- | :---------------- |
+| **Debian**     | testing                 | ✅                 |
+| Debian         | 8 (Jessie)              | ✅                 |
+| Debian         | 9 (Stretch)             | ✅                 |
+| **Ubuntu**     | 18.04 (Bionic Beaver)   | ✅                 |
+| Ubuntu         | 17.10 (Artful Aardvark) | ✅                 |
+| Ubuntu         | 16.04 (Xenial Xerus)    | ✅                 |
+| **Alpine**     | 3.8                     | ✅                 |
+| Alpine         | 3.7                     | ✅                 |
+| **Arch Linux** | Latest                  | ✅                 |
+| **CentOS**     | 7 (latest)              | ✅                 |
+| **Fedora**     | 28 (Twenty Eight)       | ✅                 |
+| Fedore         | 27 (Twenty Seven)       | ✅                 |
+| Fedora         | 26 (Twenty Six)         | ✅                 |
