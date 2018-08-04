@@ -12,7 +12,7 @@ Uses [`pacapt`](https://github.com/icy/pacapt) for compatibility with as many di
 
 ## Version
 
-The installer is currently installing CloudNet version 2.1.7.
+The installer is currently installing CloudNet version 2.1.8.
 
 ## Prequisites
 
