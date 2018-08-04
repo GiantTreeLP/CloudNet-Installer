@@ -5,7 +5,7 @@
 # Additionally checks for issues regarding other running services.
 #
 # Author: GiantTree
-# Compatible with CloudNet version 2.1.7
+# Compatible with CloudNet version 2.1.8
 # Version: 0.4
 
 install_package() {
@@ -118,7 +118,7 @@ if [ $EUID -ne 0 ]; then
 	echo "Dependencies will be skipped!"
 fi
 
-echo "Welcome to the CloudNet installer for version 2.1.7"
+echo "Welcome to the CloudNet installer for version 2.1.8"
 echo "This script will download CloudNet and it's dependencies, so that you can run it right away."
 sleep 1
 
@@ -134,8 +134,8 @@ if [ $EUID -eq 0 ]; then
 	install_java
 fi
 
-echo "Downloading CloudNet version 2.1.7..."
-curl --progress-bar -L -q -o "cloudnet.zip" "https://cloudnetservice.eu/cloudnet/version/pre/2.1.7/CloudNet.zip"
+echo "Downloading CloudNet version 2.1.8..."
+curl --progress-bar -L -q -o "cloudnet.zip" "https://cloudnetservice.eu/cloudnet/version/pre/2.1.8/CloudNet.zip"
 
 echo "Verifying download..."
 unzip -tq "cloudnet.zip"
