@@ -5,7 +5,7 @@
 # Additionally checks for issues regarding other running services.
 #
 # Author: GiantTree
-# Compatible with CloudNet version 2.1.9
+# Compatible with CloudNet version 2.1.10
 # Version: 0.4
 
 install_package() {
@@ -135,7 +135,7 @@ if [ $EUID -eq 0 ]; then
 fi
 
 echo "Downloading CloudNet version 2.1.9..."
-curl --progress-bar -L -q -o "cloudnet.zip" "https://cloudnetservice.eu/cloudnet/version/pre/2.1.9/CloudNet.zip"
+curl --progress-bar -L -q -o "cloudnet.zip" "https://cloudnetservice.eu/cloudnet/version/release/2.1.10/CloudNet.zip"
 
 echo "Verifying download..."
 unzip -tq "cloudnet.zip"
