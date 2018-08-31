@@ -12,7 +12,7 @@ Uses [`pacapt`](https://github.com/icy/pacapt) for compatibility with as many di
 
 ## Version
 
-The installer is currently installing CloudNet version 2.1.9.
+The installer is currently installing CloudNet version 2.1.10.
 
 ## Prequisites
 
@@ -47,8 +47,8 @@ All tests have been conducted with the slim images available for Docker, where p
 | Distribution   | Version                 | Tested/Compatible |
 | :------------- | :---------------------- | :---------------- |
 | **Debian**     | testing                 | ✅                 |
-| Debian         | 8 (Jessie)              | ✅                 |
 | Debian         | 9 (Stretch)             | ✅                 |
+| Debian         | 8 (Jessie)              | ✅                 |
 | **Ubuntu**     | 18.04 (Bionic Beaver)   | ✅                 |
 | Ubuntu         | 17.10 (Artful Aardvark) | ✅                 |
 | Ubuntu         | 16.04 (Xenial Xerus)    | ✅                 |
