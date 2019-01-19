@@ -123,6 +123,26 @@ pipeline {
                         '''
                     }
                 }
+                stage('Ubuntu 18.10') {
+                    agent {
+                        docker {
+                            label 'docker'
+                            image 'ubuntu:18.10'
+                            args '-u root:root'
+                        }
+                    }
+                    steps {
+                        sh '''#!/bin/bash
+                        apt-get update && apt-get install curl -y
+                        cd /root/
+                        rm -rf CloudNet-Test
+                        mkdir CloudNet-Test
+                        cd CloudNet-Test
+                        curl -sL "https://git.groundmc.net/GiantTree/CloudNet-Installer/raw/branch/master/install.sh" -O install.sh
+                        bash install.sh
+                        '''
+                    }
+                }
                 stage('Alpine 3.7') {
                     agent {
                         docker {
@@ -244,6 +264,25 @@ pipeline {
                         docker {
                             label 'docker'
                             image 'fedora:28'
+                            args '-u root:root'
+                        }
+                    }
+                    steps {
+                        sh '''#!/bin/bash
+                        cd /root/
+                        rm -rf CloudNet-Test
+                        mkdir CloudNet-Test
+                        cd CloudNet-Test
+                        curl -sL "https://git.groundmc.net/GiantTree/CloudNet-Installer/raw/branch/master/install.sh" -O install.sh
+                        bash install.sh
+                        '''
+                    }
+                }
+                stage('Fedora 29') {
+                    agent {
+                        docker {
+                            label 'docker'
+                            image 'fedora:29'
                             args '-u root:root'
                         }
                     }
