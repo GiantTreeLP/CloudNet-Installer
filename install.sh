@@ -31,12 +31,15 @@ install_java() {
 			# Handle slim versions
 			# https://github.com/debuerreotype/docker-debian-artifacts/issues/24
 			mkdir -p "/usr/share/man/man1"
+			VERSION_ID=${VERSION_ID:=9} # Debian buster does not have VERSION_ID in its /etc/os-release file, fixing to 9 then.
 
 			if [ "$VERSION_ID" = "8" ]; then
 				echo "Found Debian 8, using jessie-backports of Java 8"
 				echo "deb http://archive.debian.org/debian jessie-backports main" >"/etc/apt/sources.list.d/jessie-backports.list"
+				echo "Acquire::Check-Valid-Until \"false\";" > "/etc/apt/apt.conf.d/100disablechecks"
 				update_package_cache
 				install_package 'openjdk-8-jre-headless' '-t' 'jessie-backports'
+				rm "/etc/apt/apt.conf.d/100disablechecks"
 				return
 			elif [ "$VERSION_ID" -gt "8" ]; then
 				echo "Found modern Debian, Java 8 should be in the official sources"
