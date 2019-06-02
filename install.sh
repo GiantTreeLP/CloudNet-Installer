@@ -42,13 +42,15 @@ install_java() {
 				rm "/etc/apt/apt.conf.d/100disablechecks"
 				return
 			elif [ "$VERSION_ID" -gt "8" ]; then
-				echo "Found modern Debian, Java 8 should be in the official sources"
-				install_package 'openjdk-8-jre-headless'
+				echo "Found modern Debian, Java 8 or later should be the default."
+				echo "Spigot 1.8 might not work, anyone using it is highly recommended to switch to a supported version."
+				install_package 'default-jre-headless'
 				return
 			else
 				echo "Unsupported version of Debian."
-				echo "We are trying to install Java using the 'openjdk-8-jre-headless' package."
-				install_package 'openjdk-8-jre-headless'
+				echo "We are trying to install Java using the 'default-jre-headless' package."
+				echo "Spigot 1.8 might not work, anyone using it is highly recommended to switch to a supported version."
+				install_package 'default-jre-headless'
 				return
 			fi
 		elif [ "$ID" = "ubuntu" ]; then
