@@ -7,7 +7,7 @@ pipeline {
                     agent {
                         docker {
                             label 'docker'
-                            image 'debian:8-slim'
+                            image 'debian:jessie-slim'
                             args '-u root:root'
                         }
                     }
@@ -27,7 +27,27 @@ pipeline {
                     agent {
                         docker {
                             label 'docker'
-                            image 'debian:9-slim'
+                            image 'debian:stretch-slim'
+                            args '-u root:root'
+                        }
+                    }
+                    steps {
+                        sh '''#!/bin/bash
+                        apt-get update && apt-get install curl -y
+                        cd /root/
+                        rm -rf CloudNet-Test
+                        mkdir CloudNet-Test
+                        cd CloudNet-Test
+                        curl -sL "https://git.groundmc.net/GiantTree/CloudNet-Installer/raw/branch/master/install.sh" -O install.sh
+                        bash install.sh
+                        '''
+                    }
+                }
+                stage('Debian 10 Slim') {
+                    agent {
+                        docker {
+                            label 'docker'
+                            image 'debian:buster-slim'
                             args '-u root:root'
                         }
                     }
@@ -143,6 +163,46 @@ pipeline {
                         '''
                     }
                 }
+                stage('Ubuntu 19.04') {
+                    agent {
+                        docker {
+                            label 'docker'
+                            image 'ubuntu:19.04'
+                            args '-u root:root'
+                        }
+                    }
+                    steps {
+                        sh '''#!/bin/bash
+                        apt-get update && apt-get install curl -y
+                        cd /root/
+                        rm -rf CloudNet-Test
+                        mkdir CloudNet-Test
+                        cd CloudNet-Test
+                        curl -sL "https://git.groundmc.net/GiantTree/CloudNet-Installer/raw/branch/master/install.sh" -O install.sh
+                        bash install.sh
+                        '''
+                    }
+                }
+                stage('Ubuntu 19.10') {
+                    agent {
+                        docker {
+                            label 'docker'
+                            image 'ubuntu:19.10'
+                            args '-u root:root'
+                        }
+                    }
+                    steps {
+                        sh '''#!/bin/bash
+                        apt-get update && apt-get install curl -y
+                        cd /root/
+                        rm -rf CloudNet-Test
+                        mkdir CloudNet-Test
+                        cd CloudNet-Test
+                        curl -sL "https://git.groundmc.net/GiantTree/CloudNet-Installer/raw/branch/master/install.sh" -O install.sh
+                        bash install.sh
+                        '''
+                    }
+                }
                 stage('Alpine 3.7') {
                     agent {
                         docker {
@@ -183,11 +243,31 @@ pipeline {
                         '''
                     }
                 }
+                stage('Alpine 3.9') {
+                    agent {
+                        docker {
+                            label 'docker'
+                            image 'alpine:3.9'
+                            args '-u root:root'
+                        }
+                    }
+                    steps {
+                        sh '''#!/bin/sh
+                        apk add --no-cache bash curl
+                        cd /root/
+                        rm -rf CloudNet-Test
+                        mkdir CloudNet-Test
+                        cd CloudNet-Test
+                        curl -sL "https://git.groundmc.net/GiantTree/CloudNet-Installer/raw/branch/master/install.sh" -O install.sh
+                        bash install.sh
+                        '''
+                    }
+                }
                 stage('ArchLinux') {
                     agent {
                         docker {
                             label 'docker'
-                            image 'base/archlinux'
+                            image 'archlinux/base'
                             args '-u root:root'
                         }
                     }
@@ -283,6 +363,44 @@ pipeline {
                         docker {
                             label 'docker'
                             image 'fedora:29'
+                            args '-u root:root'
+                        }
+                    }
+                    steps {
+                        sh '''#!/bin/bash
+                        cd /root/
+                        rm -rf CloudNet-Test
+                        mkdir CloudNet-Test
+                        cd CloudNet-Test
+                        curl -sL "https://git.groundmc.net/GiantTree/CloudNet-Installer/raw/branch/master/install.sh" -O install.sh
+                        bash install.sh
+                        '''
+                    }
+                }
+                stage('Fedora 30') {
+                    agent {
+                        docker {
+                            label 'docker'
+                            image 'fedora:30'
+                            args '-u root:root'
+                        }
+                    }
+                    steps {
+                        sh '''#!/bin/bash
+                        cd /root/
+                        rm -rf CloudNet-Test
+                        mkdir CloudNet-Test
+                        cd CloudNet-Test
+                        curl -sL "https://git.groundmc.net/GiantTree/CloudNet-Installer/raw/branch/master/install.sh" -O install.sh
+                        bash install.sh
+                        '''
+                    }
+                }
+                stage('Fedora 31') {
+                    agent {
+                        docker {
+                            label 'docker'
+                            image 'fedora:31'
                             args '-u root:root'
                         }
                     }

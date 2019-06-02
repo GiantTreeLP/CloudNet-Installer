@@ -47,17 +47,23 @@ All tests have been conducted with the slim images available for Docker, where p
 | Distribution   | Version                   | Tested/Compatible |
 | :------------- | :------------------------ | :---------------- |
 | **Debian**     | testing                   | ✅                 |
+| Debian         | 10 (Buster)               | ✅                 |
 | Debian         | 9 (Stretch)               | ✅                 |
 | Debian         | 8 (Jessie)                | ✅                 |
-| **Ubuntu**     | 18.10 (Cosmic Cuttlefish) | ✅                 |
+| **Ubuntu**     | 19.10 (Eoan Ermine)       | ✅                 |
+| Ubuntu         | 19.04 (Disco Dingo)       | ✅                 |
+| Ubuntu         | 18.10 (Cosmic Cuttlefish) | ✅                 |
 | Ubuntu         | 18.04 (Bionic Beaver)     | ✅                 |
 | Ubuntu         | 17.10 (Artful Aardvark)   | ✅                 |
 | Ubuntu         | 16.04 (Xenial Xerus)      | ✅                 |
-| **Alpine**     | 3.8                       | ✅                 |
+| **Alpine**     | 3.9                       | ✅                 |
+| Alpine         | 3.8                       | ✅                 |
 | Alpine         | 3.7                       | ✅                 |
-| **Arch Linux** | Latest                    | ✅                 |
-| **CentOS**     | 7 (latest)                | ✅                 |
-| **Fedora**     | 29 (Twenty Nine)          | ✅                 |
-| Fedora         | 28 (Twenty Eight)         | ✅                 |
-| Fedora         | 27 (Twenty Seven)         | ✅                 |
-| Fedora         | 26 (Twenty Six)           | ✅                 |
+| **Arch Linux** | Rolling                   | ✅                 |
+| **CentOS**     | 7                         | ✅                 |
+| **Fedora**     | 31                        | ✅                 |
+| Fedora         | 30                        | ✅                 |
+| Fedora         | 29                        | ✅                 |
+| Fedora         | 28                        | ✅                 |
+| Fedora         | 27                        | ✅                 |
+| Fedora         | 26                        | ✅                 |
