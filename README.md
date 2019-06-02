@@ -54,7 +54,6 @@ All tests have been conducted with the slim images available for Docker, where p
 | Ubuntu         | 19.04 (Disco Dingo)       | ✅                 |
 | Ubuntu         | 18.10 (Cosmic Cuttlefish) | ✅                 |
 | Ubuntu         | 18.04 (Bionic Beaver)     | ✅                 |
-| Ubuntu         | 17.10 (Artful Aardvark)   | ✅                 |
 | Ubuntu         | 16.04 (Xenial Xerus)      | ✅                 |
 | **Alpine**     | 3.9                       | ✅                 |
 | Alpine         | 3.8                       | ✅                 |
